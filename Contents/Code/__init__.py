@@ -32,6 +32,10 @@ def Start():
 ####################################################################################################
 
 def MainMenu():
+    
+    if not Platform.HasFlash():
+        return MessageContainer(NAME, L('This channel requires Flash. Please download and install Adobe Flash on the computer running Plex Media Server.'))
+
     dir = MediaContainer(viewGroup="List")
 
     network = TVTROPOLIS_PARAMS
